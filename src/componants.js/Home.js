@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+// import video from '../assets.js/Video.mp4'
+import video from '../assets.js/Milky Way - 58289.mp4'
 
 
 function Home() {
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(true);
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -12,14 +14,19 @@ function Home() {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
+
+
+  // video
+
+  
   return (
     <motion.div className="home"
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
     >
-      <video autoPlay loop muted id="vedio" src="/src/assets.js/Video.mp4"></video>
-
+      <div className="video-layer"></div>
+<video   autoPlay loop muted className='video' src={video}/>
       <div className="container-destination home1">
 
           <div className="home-content">
@@ -35,17 +42,32 @@ function Home() {
         
 
 
-           <div className="explore-section">
+           <div
+            className="explore-section">
             <div className="ex-circle">
-              <div
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
+            <motion.div
+                // animate={{scale:1}}
+                // animate={{scale:1.5}}
+                transition={{repeat:Infinity,duration:2}}
+                // onMouseOver={setIsHovering(true)}
+                // onMouseOut={setIsHovering(false)}
                 className="ex"
               >
                 <p className="p">Explore</p>
-                   {isHovering &&<div className="layer "></div>}
+                {/* {isHovering && */}
+                <motion.div
+                animate={{opacity:1}}
+                // exit={{opacity:1}}
+                
+                transition={{repeat:Infinity,duration:2}}
+                
+                
+                
+                   
+                    className="layer "></motion.div>
+                    {/* // } */}
                   
-              </div>
+              </motion.div>
             </div>
           </div>
 

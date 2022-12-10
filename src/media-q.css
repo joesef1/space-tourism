@@ -72,11 +72,11 @@ height: 210px;
 margin-left: 90px;
 }
 
-.ex-circle .ex:hover .layer{
+/* .ex-circle .ex:hover .layer{
   width: 320px;
   height: 320px;
   transform: translate(-78%,-50%);
-  }
+  } */
 
 
 
@@ -211,7 +211,7 @@ transform: translateY(-60px);
   }
   
   .Destination {
-    background-image: url(/public/assets/destination/background-destination-tablet.jpg);
+    /* background-image: url(/public/assets/destination/background-destination-tablet.jpg); */
     
   }
   .crew {
@@ -492,6 +492,14 @@ display: block;
       /* padding-top: 400px; */
       transform: translateY(10px);
       }
+    .crew{
+  padding-top: 27vh;
+}  
+}
+
+.layer{
+  width: 200px;
+  height: 200px;
 }
 
 
@@ -611,17 +619,17 @@ font-size: 20px;
 text-transform: uppercase;
 letter-spacing: 0.1rem;
 }
-.layer{
+/* .layer{
 width: 200px;
 height: 200px;
 transform: translate(-76%,-50%);
-}
+} */
 
-.ex-circle .ex:hover .layer{
+/* .ex-circle .ex:hover .layer{
 width: 250px;
 height: 250px;
 transform: translate(-86%,-50%);
-}
+} */
 
 @media (max-height: 667px) {
   .home-content{
@@ -779,7 +787,7 @@ text-align: center;
   }
   
   .Destination {
-    background-image: url(/public/assets/destination/background-destination-mobile.jpg);
+    /* background-image: url(/public/assets/destination/background-destination-mobile.jpg); */
   }
   .crew {
     background-image: url(/public/assets/crew/background-crew-mobile.jpg);
@@ -805,26 +813,15 @@ text-align: center;
   font-size: 65px;
   }
   
-
 .ex-circle .ex{
 width: 140px;
 height: 140px;
 }
 
-
 .ex-circle .ex .p{
 font-size: 17px;
 }
-.layer{
 
-transform: translate(-76%,-50%);
-}
-
-.ex-circle .ex:hover .layer{
-  width: 190px;
-  height: 190px;
-transform: translate(-97%,-50%);
-}
 
 .orbit-para.crew-p{
   font-size: 13px;
@@ -836,6 +833,13 @@ transform: translate(-97%,-50%);
 }
 .crew-name.crew-h1 {
   font-size: 20px;
+}
+.bloc-tabs.crew-p{
+  position: relative;
+}
+.orbit-text{
+  position: relative;
+  transform: translateY(0px);
 }
 
 
@@ -867,4 +871,35 @@ transform: translate(-97%,-50%);
 .header .header-nav {
 
   transform: translateX(254px);
+}
+
+@media (min-width: 768px) {
+  .bloc-tabs.crew-p{
+    position: absolute;
+    top: unset;
+  }
+  .orbit-imgs.crew-i {
+    position: relative;
+}
+
+.orbit-img.crew-i.victor{ 
+  bottom: -53px;
+  padding-top: 40px;
+
+}
+
+.orbit-img.crew-i.ansary{
+  padding-top: 100px;
+}
+.orbit-img.crew-i.mark{
+  width: 55%;
+  padding-top: 100px;
+}
+
+.orbit-img.crew-i.douglas{
+  padding-top: 90px;
+  width: 63%;
+}
+
+
 }

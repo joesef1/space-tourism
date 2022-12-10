@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { React, useState,useEffect, useRef } from "react";
 import Animatedrouts from "./componants.js/Animatedrouts";
 import { motion } from "framer-motion";
+import { useMediaQuery } from 'react-responsive'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
   const togglehandleOpen = () => {
     setHandleClose(true);
+    // sethandlelogic(true)
   };
   
   useEffect(() => {
@@ -39,11 +41,16 @@ const refn4 = useRef(null)
 
 
 const hanleClickOutside = (e) => {
-  if (!refOne.current.contains(e.target)) {
-    console.log('clicked outside ..');
+  const isNarrowScreen = window.matchMedia("(max-width: 750px)").matches;
+  if (!refOne.current.contains(e.target) && isNarrowScreen) {
     setHandleClose(false);
   }
 }
+
+useEffect(() => {
+  window.matchMedia("(min-width: 755px)").addEventListener("click",hanleClickOutside )
+});
+
 
 const hanleClickinside = (e) => {
   if (refn1.current.contains(e.target)) {
@@ -59,19 +66,13 @@ const hanleClickinside = (e) => {
   }
 }
 
-
-
-// test
-
+// 
+const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
 const linkCloseNav = () => { 
-  // setHandleClose(false)
-  console.log("ff.yu");
-  if (window.matchMedia("(min-width: 768px)")) {
+    if (isTabletOrMobile) {
    setHandleClose(false)
   }
  }
-
-// ./test
 
 
 
@@ -92,7 +93,7 @@ const linkCloseNav = () => {
             <motion.div 
             // animate={{x:0 }}
             animate={{x:handleClose ? 0 : 254 }}
-            transition={{type:'tween', duration:0}}
+            transition={{duration:0.1}}
             // exit={{x: !handleClose ? 0 : 0}}
             
             ref={refOne} className="header-nav">
@@ -117,10 +118,6 @@ const linkCloseNav = () => {
                 <NavLink  onClick={linkCloseNav}
                 className="link" to="/src/componants.js/Technology.js">
                   <strong>03</strong> technology <span></span>
-                </NavLink>
-                <NavLink  onClick={linkCloseNav}
-                className="link" to="/src/componants.js/Plannet.js">
-                  <strong>04</strong> plannet <span></span>
                 </NavLink>
               </ul>
             </motion.div>

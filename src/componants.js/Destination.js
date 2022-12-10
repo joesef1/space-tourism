@@ -4,6 +4,9 @@ import Europa from "../destination/image-europa.png";
 import Mars from "../destination/image-mars.png";
 import Titan from "../destination/image-titan.png";
 import { motion,AnimatePresence } from "framer-motion";
+import videod from '../assets.js/file.mp4'
+
+
 
 
 function Destination() {
@@ -19,6 +22,8 @@ function Destination() {
     animate={{opacity:1}}
     exit={{opacity:0}}
     >
+        <div className="video-layer"></div>
+<video   autoPlay loop muted className='video v-d' src={videod}/>
       <div className="container-destination resp-d">
 
             <p className="orbit-text dist">
@@ -62,12 +67,14 @@ function Destination() {
               >
                 moon
               </div>
-              <div
+              <motion.div
+              // animate={{scale:0.1 }}
+              // transition={{duration:1}}
                 onClick={() => toggletab(2)}
                 className={toggleState === 2 ? "tab active-tabs" : "tab"}
               >
                 mars
-              </div>
+              </motion.div>
               <div
                 onClick={() => toggletab(3)}
                 className={toggleState === 3 ? "tab active-tabs" : "tab"}
@@ -157,8 +164,9 @@ transition={{ duration: 0.2 }}
               </motion.div>
             </AnimatePresence>
 
-            <AnimatePresence exitBeforeEnter>
 
+
+<AnimatePresence exitBeforeEnter>
 <motion.div
 key={selectedTab ? selectedTab : "empty"}
 initial={{ y: 10, opacity: 0 }}
@@ -195,6 +203,7 @@ transition={{ duration: 0.2 }}
               </motion.div>
             </AnimatePresence>
 
+            <AnimatePresence exitBeforeEnter>
             <motion.div
             // key={selectedTab ? selectedTab : "empty"}
  initial={{ y: 10, opacity: 0 }}
@@ -228,10 +237,17 @@ transition={{ duration: 0.2 }}
                 </div>
               </div>
             </motion.div>
+            </AnimatePresence>
+
+
+
           </div>
         </div>
       </div>
+
+
     </motion.div>
+    
   );
 }
 
