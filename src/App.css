@@ -146,17 +146,18 @@
 
 /* Home */
 .home {
-  /* background-image: url(/public/assets/home/background-home-desktop.jpg); */
+  background-image: url(/public/assets/home/background-home-desktop.jpg);
   width: 100%;
   z-index: -1;
   background-size: cover;
   /* padding-top: 22vh; */
   /* overflow: hidden; */
+  height: 105vh;
 
 }
 
 .Destination {
-  /* background-image: url(/public/assets/destination/background-destination-desktop.jpg); */
+  background-image: url(/public/assets/destination/background-destination-desktop.jpg);
   width: 100%;
   z-index: 111;
   background-size: cover;
@@ -181,9 +182,7 @@
   z-index: 111111111;
   background-size: cover;
   padding-top: 50vh;
-  overflow: scroll;
-
-
+  overflow: hidden;
 }
 
 .header-icon img {
@@ -647,7 +646,7 @@ letter-spacing: 0.1rem;
 
 }
 @media (max-width: 768px) {
-
+/* 
 @media (max-height: 670px) {
     .crew{
   padding-top: 27vh;
@@ -656,10 +655,11 @@ letter-spacing: 0.1rem;
   transform: translateY(75px);
 }
 .orbit-text.crew-text {
-  /* transform: unset; */
   transform: translateY(80px);
 }
-}
+} llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll*/
+
+
 .orbit-img.crew-i.ansary{
   padding-top: 73px;
 }
@@ -718,6 +718,9 @@ bottom: 0;
   .orbit-img.crew-i.ansary{
     bottom: -9px;
   }
+
+
+
   
   
   

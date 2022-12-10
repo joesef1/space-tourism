@@ -67,7 +67,7 @@ const hanleClickinside = (e) => {
 }
 
 // 
-const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+const isTabletOrMobile = useMediaQuery({ query: '(max-width: 767px)' })
 const linkCloseNav = () => { 
     if (isTabletOrMobile) {
    setHandleClose(false)

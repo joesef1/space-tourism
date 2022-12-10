@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-// import video from '../assets.js/Video.mp4'
-import video from '../assets.js/Milky Way - 58289.mp4'
 
 
 function Home() {
@@ -25,8 +23,6 @@ function Home() {
     animate={{opacity:1}}
     exit={{opacity:0}}
     >
-      <div className="video-layer"></div>
-<video   autoPlay loop muted className='video' src={video}/>
       <div className="container-destination home1">
 
           <div className="home-content">

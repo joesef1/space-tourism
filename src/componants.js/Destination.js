@@ -4,7 +4,6 @@ import Europa from "../destination/image-europa.png";
 import Mars from "../destination/image-mars.png";
 import Titan from "../destination/image-titan.png";
 import { motion,AnimatePresence } from "framer-motion";
-import videod from '../assets.js/file.mp4'
 
 
 
@@ -22,8 +21,6 @@ function Destination() {
     animate={{opacity:1}}
     exit={{opacity:0}}
     >
-        <div className="video-layer"></div>
-<video   autoPlay loop muted className='video v-d' src={videod}/>
       <div className="container-destination resp-d">
 
             <p className="orbit-text dist">
